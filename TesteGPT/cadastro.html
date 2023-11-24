@@ -86,7 +86,45 @@
             </form>
         </section>
 
+        <function realizarCadastro() {
+            // Obtendo dados do formulário
+            var nome = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('password').value;
+            var confirmarSenha = document.getElementById('confirm-password').value;
+            var condominio = document.getElementById('gender').value;
+
+            // Montando objeto de dados para a requisição
+            var dadosCadastro = {
+                nome: nome,
+                email: email,
+                senha: senha,
+                confirmarSenha: confirmarSenha,
+                condominio: condominio
+            };
+
+            // Fazendo a requisição para a API
+            fetch('SUA_API_AQUI', {
+                method: 'POST', // ou 'PUT', 'GET', 'DELETE', etc.
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dadosCadastro)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Faça algo com a resposta da API (opcional)
+                console.log(data);
+            })
+            .catch(error => {
+                // Trate erros caso a requisição falhe
+                console.error('Erro na requisição:', error);
+            });
+        }
+
     </body>
+
+
 
     <!-- Rodapé -->
     <footer class="bg-dark text-white text-center py-2">
