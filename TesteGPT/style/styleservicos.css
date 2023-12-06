@@ -1,3 +1,8 @@
+#card {
+    margin-top: 13vh;
+    margin-bottom: 13vh;
+  }
+
 .plan {
     border-radius: 16px;
     box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
@@ -115,3 +120,13 @@
 .plan .button:focus {
     background-color: #4133B7;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 1;
+  }

@@ -3,13 +3,15 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 1em 0;
 }
 
 section {
@@ -20,29 +22,37 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 form {
     display: grid;
-    grid-gap: 10px;
-    max-width: 400px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 label {
     display: block;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 input,
-textarea {
+select {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 button {
+    grid-column: span 2;
     background-color: #333;
     color: #fff;
     padding: 10px;
@@ -71,4 +81,8 @@ footer {
     color: #fff;
     text-decoration: none;
     font-size: 20px;
+}
+
+main {
+    flex: 1;
 }
