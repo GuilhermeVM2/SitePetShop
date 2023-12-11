@@ -1,31 +1,33 @@
 <?php
-require_once 'ConexaoBanco.php';
 
-// Conexão com o banco de dados (usando PDO)
-$servername = "localhost:80";
-$username = "root";
-$password = "";
-$dbname = "dbvila";
-
-try {
-    $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Receber os dados do formulário
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obter dados do formulário
     $nome = $_POST['nome'];
     $email = $_POST['email'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+    $senha = $_POST['senha'];
+    $condominio = $_POST['condominio'];
 
-    // Inserir os dados no banco de dados
-    $stmt = $pdo->prepare("INSERT INTO cadastro (nome, email, senha) VALUES (?, ?, ?)");
-    $stmt->execute([$nome, $email, $senha]);
+    // Conectar ao banco de dados (certifique-se de ajustar as informações conforme necessário)
+    $conexao = new mysqli('localhost', 'root', '', 'dbvila');
 
-    // Mensagem de confirmação
-    echo "Cadastro realizado com sucesso!";
+    // Verificar a conexão
+    if ($conexao->connect_error) {
+        die("Falha na conexão ao banco de dados: " . $conexao->connect_error);
+    }
 
-    // Redirecionamento para outra página após 2 segundos
-    header("refresh:1;url=Login.html");
-} catch (Exception $e) {
-    echo "Erro ao processar o formulário: " . $e->getMessage();
+    // Inserir dados na tabela usuarios
+    $sql = "INSERT INTO usuarios (nome, email, senha, condominio) VALUES ('$nome', '$email', '$senha', '$condominio')";
+
+    if ($conexao->query($sql) === TRUE) {
+        echo "Cadastro realizado com sucesso!";
+    } else {
+        echo "Erro ao cadastrar: " . $conexao->error;
+    }
+
+    // Fechar a conexão
+    $conexao->close();
+} else {
+    echo "Acesso não autorizado.";
 }
+
 ?>

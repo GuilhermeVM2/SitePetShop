@@ -51,7 +51,7 @@
     <main>
         <section>
             <h2>Faça seu Cadastro</h2>
-            <form action="#" method="post">
+            <form action="processa_formulario.php" method="post">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>
 
@@ -59,16 +59,16 @@
                 <input type="email" id="email" name="email" required>
 
                 <label for="senha">Senha:</label>
-                <input type="senha" id="senha" name="senha" required>
+                <input type="password" id="senha" name="senha" required>
 
                 <label for="confirmar-senha">Confirmar Senha:</label>
-                <input type="senha" id="confirmar-senha" name="confirmar-senha" required>
+                <input type="password" id="confirmar-senha" name="confirmar-senha" required>
 
-                <label for="gender">Condomínio:</label>
-                <select id="gender" name="gender">
-                    <option value="male">Condomínio A</option>
-                    <option value="female">Condomínio B</option>
-                    <option value="female">Condomínio C</option>
+                <label for="condominio">Condomínio:</label>
+                <select id="condominio" name="condominio">
+                    <option value="a">Condomínio A</option>
+                    <option value="b">Condomínio B</option>
+                    <option value="c">Condomínio C</option>
                     <option value="other">Outro</option>
                 </select>
 
