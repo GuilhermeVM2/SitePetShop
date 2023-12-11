@@ -35,7 +35,7 @@
                                 <a class="nav-link" href="contatos.html">Contatos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="cadastro.html">Cadastro</a>
+                                <a class="nav-link" href="cadastro.php">Cadastro</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="cliente.html">Área do Cliente</a>
@@ -51,6 +51,14 @@
     <main>
         <section>
             <h2>Faça seu Cadastro</h2>
+
+            <?php
+            // Verificar se a variável de sucesso está definida
+            if (isset($_GET['sucesso']) && $_GET['sucesso'] == 1) {
+                echo '<script>alert("Cadastro realizado com sucesso!");</script>';
+            }
+            ?>
+
             <form action="processa_formulario.php" method="post">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>

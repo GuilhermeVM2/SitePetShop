@@ -19,7 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = "INSERT INTO usuarios (nome, email, senha, condominio) VALUES ('$nome', '$email', '$senha', '$condominio')";
 
     if ($conexao->query($sql) === TRUE) {
-        echo "Cadastro realizado com sucesso!";
+        // Redirecionar de volta para o formulário com uma mensagem de sucesso
+        header('Location: cadastro.php?sucesso=1');
     } else {
         echo "Erro ao cadastrar: " . $conexao->error;
     }
