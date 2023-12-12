@@ -1,20 +1,10 @@
 <?php
+// Senha a ser hashada
+$senha = 'senha123';
 
-$host = 'localhost'; // Altere para o seu host
-$user = 'root'; // Altere para o seu nome de usuário
-$database = 'dbvila'; // Altere para o seu nome de banco de dados
+// Cria o hash da senha
+$hashSenha = password_hash($senha, PASSWORD_DEFAULT);
 
-// Conectar ao MySQL
-$conn = new mysqli($host, $user, '', $database);
-
-// Verificar a conexão
-if ($conn->connect_error) {
-    die("Falha na conexão ao banco de dados: " . $conn->connect_error);
-} else {
-    echo "Conexão bem-sucedida ao banco de dados!";
-}
-
-// Fechar a conexão
-$conn->close();
-
+// Exibe o hash da senha
+echo "Hash da Senha: $hashSenha";
 ?>
