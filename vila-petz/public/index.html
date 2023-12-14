@@ -1,142 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <!-- Adicione o link para o CSS do Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/style.css">
-</head>
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Vila Petz</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-<body>
-  
-    <!-- Conteúdo da Página -->
-    <main>
-        <!-- Carousel -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner" style="height: 50vh;">
-                <div class="carousel-item active">
-                    <img src="img/vilaImg.png" class="d-block mx-auto" alt="..." style="max-height: 50vh;">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/cuidagato.png" class="d-block mx-auto" alt="..." style="max-height: 50vh;">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/tosaChorro.png" class="d-block mx-auto" alt="..." style="max-height: 50vh;">
-                </div>
-            </div>
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <br>
-        <div class="col-md-12">
-            <!-- Titulo -->
-            <h2 style="text-align: center;">Bem-vindo ao Nosso Petshop!</h2>
-        </div>
-        <br>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 d-flex align-items-center">
-                    <!-- Buttons de acesso -->
-                    <div class="d-grid gap-4 mx-auto">
-                        <a href="cadastro.php" class="btn btn-dark">
-                            <h3>➜ FAÇA SEU CADASTRO </h3>
-                        </a>
-                        <a href="planos.html" class="btn btn-dark">
-                            <h3>➜ VEJA NOSSOS PLANOS </h3>
-                        </a>
-                        <a href="servicos.html" class="btn btn-dark">
-                            <h3>➜ ACESSE NOSSOS SERVIÇOS </h3>
-                        </a>
-                    </div>
-                </div>
-                <!-- Imagem da loja -->
-                <div class="col-md-6">
-                    <img src="img/passeando.jpg" alt="Imagem da Loja" class="img-fluid">
-                </div>
-            </div>
-        </div>
-        
-        <!-- Título "Condomínios Parceiros" -->
-        <div class="container mt-4">
-            <h2 class="text-center">Condomínios Parceiros</h2>
-        </div>
-
-        <!-- Espaços de link de imagens em duas linhas -->
-        <div id="condominios" class="container mt-2">
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <a href="#">
-                        <img src="img/cond1.jpg" alt="Condomínio 1" class="img-fluid condominio-img">
-                    </a>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <a href="#">
-                        <img src="img/cond2.jpg" alt="Condomínio 2" class="img-fluid condominio-img">
-                    </a>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <a href="#">
-                        <img src="img/cond3.png" alt="Condomínio 3" class="img-fluid condominio-img">
-                    </a>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <a href="#">
-                        <img src="img/cond4.webp" alt="Condomínio 4" class="img-fluid condominio-img">
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <a href="#">
-                        <img src="img/cond5.jpeg" alt="Condomínio 5" class="img-fluid condominio-img">
-                    </a>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <a href="#">
-                        <img src="img/cond6.png" alt="Condomínio 6" class="img-fluid condominio-img">
-                    </a>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <a href="#">
-                        <img src="img/cond7.png" alt="Condomínio 7" class="img-fluid condominio-img">
-                    </a>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <a href="#">
-                        <img src="img/cond8.png" alt="Condomínio 8" class="img-fluid condominio-img">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Adicione o link para o JavaScript do Bootstrap (opcional, mas recomendado para algumas funcionalidades) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-</body>
-
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
 </html>

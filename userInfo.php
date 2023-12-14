@@ -1,4 +1,4 @@
-<?php
+<?php 
 // functions.php
 // Conexão com o banco de dados (usando PDO)
 $servername = "localhost";

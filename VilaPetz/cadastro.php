@@ -4,13 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+    <title>Cadastro</title>
+    <link rel="icon" href="img/logo.png" />
     <!-- Adicione o link para o CSS do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="style/stylecontatos.css" rel="stylesheet">
+    <link href="style/stylecadastro.css" rel="stylesheet">
 </head>
+<script>
+    function validarSenha() {
+        var senha = document.getElementById("senha").value;
+        var confirmarSenha = document.getElementById("confirmar-senha").value;
 
+        if (senha !== confirmarSenha) {
+            alert("As senhas não coincidem. Por favor, verifique.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
 
 <body>
     <!-- Cabeçalho -->
@@ -48,28 +61,45 @@
         </div>
     </header>
 
+
     <main>
-        <section>
-            <h2>Entre em Contato</h2>
-            <form action="#" method="post">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
+        <div class="container">
+            <section>
+                <h2>Faça seu Cadastro</h2>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+                <?php
+                // Verificar se a variável de sucesso está definida
+                if (isset($_GET['sucesso']) && $_GET['sucesso'] == 1) {
+                    echo '<script>alert("Cadastro realizado com sucesso!");</script>';
+                }
+                ?>
 
-                <label for="phone">Telefone:</label>
-                <input type="tel" id="phone" name="phone">
+                <form action="processa_formulario.php" method="post" onsubmit="return validarSenha();">
 
-                <label for="subject">Assunto:</label>
-                <input type="text" id="subject" name="subject" required>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
 
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
 
-                <button type="submit">Enviar Mensagem</button>
-            </form>
-        </section>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+
+                    <label for="confirmar-senha">Confirmar Senha:</label>
+                    <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+
+                    <label for="condominio">Condomínio:</label>
+                    <select id="condominio" name="condominio">
+                        <option value="a">Condomínio A</option>
+                        <option value="b">Condomínio B</option>
+                        <option value="c">Condomínio C</option>
+                        <option value="other">Outro</option>
+                    </select>
+
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </section>
+        </div>
     </main>
 
     <!-- Rodapé -->
