@@ -35,8 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($usuario) {
             // Usuário autenticado com sucesso
-            echo '<script>alert("login realizado com sucesso!");</script>';
-            echo 'window.location.href = "cliente.html";</script>';
+            echo '<script>alert("login realizado com sucesso!");
+                window.location.href = "index.html"</script>';
+            exit;
         } else {
             // Usuário não encontrado ou senha incorreta
             echo "Usuário não encontrado ou senha incorreta. Verifique suas credenciais.";

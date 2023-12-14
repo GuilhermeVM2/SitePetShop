@@ -20,7 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($conexao->query($sql) === TRUE) {
         // Redirecionar de volta para o formulário com uma mensagem de sucesso
-        header('Location: cadastro.php?sucesso=1');
+            echo '<script>alert("Cadastro realizado com sucesso!");
+                window.location.href = "index.html"</script>';
+        exit;
     } else {
         echo "Erro ao cadastrar: " . $conexao->error;
     }
